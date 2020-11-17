@@ -14,7 +14,6 @@ variables:
   LogicApp.Name: 'promitor-automation-github-ci-scraper'
   GitHub.Repo.Owner: 'tomkerkhove'
   GitHub.Repo.Name: 'promitor'
-  GitHub.Bot.Name: 'promitor-bot'
 stages:
 - stage: Deploy
   jobs:

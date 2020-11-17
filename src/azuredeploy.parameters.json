@@ -11,11 +11,8 @@
         "GitHub.Repo.Name": {
             "value": "#{GitHub.Repo.Name}#"
         },
-        "GitHub.Bot.Name": {
-            "value": "#{GitHub.Bot.Name}#"
-        },
-        "GitHub.Bot.Password": {
-            "value": "#{GitHub.Bot.Password}#"
+        "GitHub.Bot.Token": {
+            "value": "#{GitHub.Bot.Token}#"
         }
     }
 }

@@ -23,17 +23,10 @@
                 "description": "Name of the GitHub repo"
             }
         },
-        "GitHub.Bot.Name": {
-            "type": "string",
-            "defaultValue": "promitor-bot",
-            "metadata": {
-                "description": "Name of the GitHub account that will act as a bot"
-            }
-        },
-        "GitHub.Bot.Password": {
+        "GitHub.Bot.Token": {
             "type": "securestring",
             "metadata": {
-                "description": "Password to authenticate with for the GitHub account that will act as a bot"
+                "description": "PAT token to authenticate with for the GitHub account that will act as a bot"
             }
         }
     },
@@ -64,12 +57,11 @@
                                     },
                                     "type": "Compose"
                                 },
-                                "HTTP": {
+                                "Post_Comment_through_GitHub_REST_API": {
                                     "inputs": {
                                         "authentication": {
-                                            "password": "[parameters('GitHub.Bot.Password')]",
-                                            "type": "Basic",
-                                            "username": "[parameters('GitHub.Bot.Name')]"
+                                            "type": "Raw",
+                                            "value": "[concat('token ', parameters('GitHub.Bot.Token'))]"
                                         },
                                         "body": {
                                             "body": "@{outputs('Define_GitHub_comment_text')}"
