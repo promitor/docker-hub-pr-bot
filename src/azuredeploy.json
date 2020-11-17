@@ -75,7 +75,7 @@
                                             "body": "@{outputs('Define_GitHub_comment_text')}"
                                         },
                                         "method": "POST",
-                                        "uri": "@{concat('https://api.github.com/repos/', parameters('GitHub.Repo.Owner'),'/', parameters('GitHub.Repo.Name'),'/issues/', outputs('Determine_GitHub_Issue_Id'),'/comments')}"
+                                        "uri": "@{concat('https://api.github.com/repos/', parameters('GitHub.Repo.Owner'),'/', parameters('GitHub.Repo.Name'),'/issues/', replace(toLower(outputs('Determine_GitHub_Issue_Id')), '-linux', ''),'/comments')}"
                                     },
                                     "runAfter": {
                                         "Define_GitHub_comment_text": [
